@@ -8,6 +8,5 @@ RUN npm run build
 
 # Production stage
 FROM nginx:alpine
-WORKDIR /usr/share/nginx/html
-COPY --from=build /app/build .
+COPY --from=build /app/build /usr/share/nginx/html
 EXPOSE 80
